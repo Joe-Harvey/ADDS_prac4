@@ -9,8 +9,13 @@ int Reverse :: reverseDigit(int value){
 
     int n = s_value.size();
 
+    //invalid input
+    if (n < 1){
+        return -1;
+    }
+
     //base case
-    if (n <= 1){
+    if (n == 1){
         return value;
     }
 
@@ -38,8 +43,13 @@ string Reverse :: reverseString(string letters){
 
     int n = letters.size();
 
+    //invalide input
+    if (n < 1){
+        return "ERROR";
+    }
+
     //base case
-    if (n <= 1){
+    if (n == 1){
         return letters;
     }
 
