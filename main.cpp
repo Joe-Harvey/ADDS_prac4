@@ -9,7 +9,7 @@ int main(){
     int val = 123456;
     cout << r.reverseDigit(val) << endl;
 
-    string str = "espanol";
+    string str = "hola";
     cout << r.reverseString(str) << endl;
 
     return 0;

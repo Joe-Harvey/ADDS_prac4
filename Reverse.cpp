@@ -51,7 +51,7 @@ string Reverse :: reverseString(string letters){
         letters.erase(0, 1);
 
         //call function and add first character to the end
-        string n_letters = reverseString(n_letters);
+        string n_letters = reverseString(letters);
         n_letters += c;
 
         return n_letters;
