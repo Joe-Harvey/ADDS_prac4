@@ -29,7 +29,7 @@ int Reverse :: reverseDigit(int value){
         return stoi(n_string);
     }
 
-    return 0;
+    return -1;
 }
 
 string Reverse :: reverseString(string letters){
@@ -57,5 +57,5 @@ string Reverse :: reverseString(string letters){
         return n_letters;
     }
 
-    return "error";
+    return "ERROR";
 }

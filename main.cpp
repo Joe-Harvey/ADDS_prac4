@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Truckloads.h"
 #include "Reverse.h"
 using namespace std;
 
@@ -11,6 +12,10 @@ int main(){
 
     string str = "hola";
     cout << r.reverseString(str) << endl;
+
+    Truckloads t;
+
+    cout << t.numTrucks(14, 3) << endl;
 
     return 0;
 }
