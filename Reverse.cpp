@@ -40,7 +40,6 @@ int Reverse :: reverseDigit(int value){
 string Reverse :: reverseString(string letters){
     
     //get size of string
-
     int n = letters.size();
 
     //invalide input

@@ -1,7 +1,7 @@
-#include "Truckloads.h"
+#include "EfficientTruckloads.h"
 #include <math.h>
 
-int Truckloads :: numTrucks(int numCrates, int loadSize){
+int EfficientTruckloads :: numTrucks(int numCrates, int loadSize){
 
     //make sure inputs are both positive
     numCrates = abs(numCrates);
@@ -12,6 +12,8 @@ int Truckloads :: numTrucks(int numCrates, int loadSize){
     if (numCrates <= loadSize){
         return 1;
     }
+
+    
 
     //recursive case
     if (numCrates > loadSize){
