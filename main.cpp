@@ -7,15 +7,15 @@ using namespace std;
 int main(){
 
     Reverse r;
-    int val = 123456;
+    int val = -14;
     cout << r.reverseDigit(val) << endl;
 
-    string str = "hola";
+    string str = "appa";
     cout << r.reverseString(str) << endl;
 
     Truckloads t;
 
-    cout << t.numTrucks(14, 3) << endl;
+    cout << t.numTrucks(10, 2) << endl;
 
     return 0;
 }

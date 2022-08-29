@@ -5,10 +5,9 @@
 class EfficientTruckloads{
 
     private:
-    void table();
-    vector<int> indicies;
-    vector<int> inputs;
-    
+    std :: vector<int> inputs;
+    std :: vector<int> outputs;
+
     public:
     int numTrucks(int numCrates, int loadSize);
 };

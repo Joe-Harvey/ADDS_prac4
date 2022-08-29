@@ -3,6 +3,9 @@ using namespace std;
 
 int Reverse :: reverseDigit(int value){
 
+    if (value < 0){
+        return -1;
+    }
     string s_value = to_string(value);
 
     //get digits in value
