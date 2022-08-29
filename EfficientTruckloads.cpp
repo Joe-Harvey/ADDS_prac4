@@ -13,24 +13,13 @@ int EfficientTruckloads :: numTrucks(int numCrates, int loadSize){
         return 1;
     }
 
-    //search for loadSize in inputs
-    bool in_vec = false;
-    for (int i = 0; i < inputs.size(); i++){
-        if (inputs.at(i) == numCrates){
-            in_vec = true;
-        }
-    }
-
-    if (in_vec == false){
-        inputs.push_back(numCrates);
-    }
-
     //recursive case
     if (numCrates > loadSize){
 
         //divide crates into two with one being larger if odd number
         int numcrates1;
         int numcrates2;
+
         if (numCrates % 2 == 0){
             numcrates1 = numCrates / 2;
             numcrates2 = numCrates / 2;
@@ -40,8 +29,31 @@ int EfficientTruckloads :: numTrucks(int numCrates, int loadSize){
             numcrates2 = numCrates / 2 + 1;
         }
 
-        int ans = numTrucks(numcrates1, loadSize) + numTrucks(numcrates2, loadSize);
-        return ans;
+        int numtrucks1;
+        int numtrucks2;
+
+        //search for loadSize in inputs 
+        for (int i = 0; i < inputs.size(); i++){
+            if (inputs.at(i) == numcrates1){
+                 numtrucks1 = outputs.at(i);
+            }
+            else{
+                inputs.push_back(numcrates1);
+                outputs.push_back(numTrucks(numcrates1, loadSize)) ;
+            }
+        }
+
+        for (int i = 0; i < inputs.size(); i++){
+            if (inputs.at(i) == numcrates2){
+                 numtrucks2 = outputs.at(i);
+            }
+            else{
+                inputs.push_back(numcrates2);
+                outputs.push_back(numTrucks(numcrates2, loadSize));
+            }
+        }
+
+        return numtrucks1 + numtrucks2;
     }
 
     return 0;
