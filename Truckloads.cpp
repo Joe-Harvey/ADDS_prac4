@@ -9,7 +9,7 @@ int Truckloads :: numTrucks(int numCrates, int loadSize){
     loadSize = abs(loadSize);
 
     //error case
-    if (isdigit(numCrates) == false || isdigit(loadSize) == false){
+    if (isdigit(numCrates) == true || isdigit(loadSize) == true){
         std :: cout << "ERROR" << std :: endl;
         return 0;
     }
