@@ -61,10 +61,12 @@ int EfficientTruckloads :: numTrucks(int numCrates, int loadSize){
             numtrucks2 = outputs.back();
         }
 
+        int ans = numtrucks1 + numtrucks2;
+
         for (int i = 0; i < inputs.size(); i++){
-            std :: cout << inputs.at(i) << " " << outputs.at(i) << std :: endl;
+            std :: cout << inputs.at(i) << " " << ans << std :: endl;
         }
-        return numtrucks1 + numtrucks2;
+        return ans;
     }
 
     return 0;
