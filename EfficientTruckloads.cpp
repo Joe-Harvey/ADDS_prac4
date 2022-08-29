@@ -1,5 +1,6 @@
 #include "EfficientTruckloads.h"
 #include <math.h>
+#include <iostream>
 
 int EfficientTruckloads :: numTrucks(int numCrates, int loadSize){
 
@@ -33,26 +34,36 @@ int EfficientTruckloads :: numTrucks(int numCrates, int loadSize){
         int numtrucks2;
 
         //search for loadSize in inputs 
+
+        bool in_tab = false;
         for (int i = 0; i < inputs.size(); i++){
             if (inputs.at(i) == numcrates1){
-                 numtrucks1 = outputs.at(i);
-            }
-            else{
-                inputs.push_back(numcrates1);
-                outputs.push_back(numTrucks(numcrates1, loadSize)) ;
+                numtrucks1 = outputs.at(i);
+                in_tab = true;
             }
         }
-
+        if (in_tab == false){
+            inputs.push_back(numcrates1);
+            outputs.push_back(numTrucks(numcrates1, loadSize));
+            numtrucks1 = outputs.back();
+        }
+        
+        in_tab = false;
         for (int i = 0; i < inputs.size(); i++){
             if (inputs.at(i) == numcrates2){
                  numtrucks2 = outputs.at(i);
-            }
-            else{
-                inputs.push_back(numcrates2);
-                outputs.push_back(numTrucks(numcrates2, loadSize));
+                 in_tab = true;
             }
         }
+        if (in_tab == false){
+            inputs.push_back(numcrates2);
+            outputs.push_back(numTrucks(numcrates2, loadSize));
+            numtrucks2 = outputs.back();
+        }
 
+        for (int i = 0; i < inputs.size(); i++){
+            std :: cout << inputs.at(i) << " " << outputs.at(i) << std :: endl;
+        }
         return numtrucks1 + numtrucks2;
     }
 
