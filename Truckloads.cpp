@@ -1,11 +1,18 @@
 #include "Truckloads.h"
 #include <math.h>
+#include <iostream>
 
 int Truckloads :: numTrucks(int numCrates, int loadSize){
 
     //make sure inputs are both positive
     numCrates = abs(numCrates);
     loadSize = abs(loadSize);
+
+    //error case
+    if (is_digit(numCrates) == false || is_digit(loadSize) == false){
+        std :: cout << "ERROR" << std :: endl;
+        return 0;
+    }
 
     //base case
 
